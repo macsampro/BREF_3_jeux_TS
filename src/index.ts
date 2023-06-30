@@ -1,11 +1,10 @@
-import {weapon} from"./index"
-
+import {weapon} from "./class_weapon";
 
 export class Hero {
     private name:string;
     private power:number;
     private life:number;
-            weapon!: Weapon;
+            weapon!: weapon;
 
     constructor(_name:string, _power:number, _life:number) {
         this.name = _name;
@@ -14,34 +13,41 @@ export class Hero {
     }
 
     attack(opponent:Hero){
-        opponent._life -= this.power;
+        opponent.life -= this.power;
     }
 
     isAlive(){
         return this.life > 0;
     }
 
-    get _name(): string {
+    getname(): string {
         return this.name;
     }
 
-    set _name(nouveauNom : string) {
+    setname(nouveauNom : string) {
         this.name = nouveauNom;
     }
 
-    get _power(): number {
+    getpower(): number {
         return this.power;
     }
 
-    set _power(nouveauPower : number) {
+    setpower(nouveauPower : number) {
         this.power = nouveauPower;
     }
 
-    get _life(): number {
+    getlife(): number {
         return this.life;
     }
 
-    set _life(nouvelleLife : number) {
+    setlife(nouvelleLife : number) {
         this.life = nouvelleLife;
     }
 }
+
+let hercule:Hero = new Hero("hercule", 19, 300);
+let johnsson:Hero = new Hero("johnsson", 19, 200);
+
+
+
+
