@@ -1,4 +1,4 @@
-export class weapon {
+export class arme {
     name:string;
 
     constructor(w_name:string) {

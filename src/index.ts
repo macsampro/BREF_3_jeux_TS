@@ -1,10 +1,10 @@
-import {weapon} from "./class_weapon";
+import {arme} from "./class_ ARME";
 
 export class Hero {
     private name:string;
     private power:number;
     private life:number;
-            weapon!: weapon;
+            arme!: arme;
 
     constructor(_name:string, _power:number, _life:number) {
         this.name = _name;
@@ -12,7 +12,7 @@ export class Hero {
         this.life = _life;
     }
 
-    attack(opponent:Hero){
+    attack(opponent:Hero):void{
         opponent.life -= this.power;
     }
 
@@ -45,9 +45,25 @@ export class Hero {
     }
 }
 
-let hercule:Hero = new Hero("hercule", 19, 300);
-let johnsson:Hero = new Hero("johnsson", 19, 200);
+let samir:Hero = new Hero("samir", 125, 300);
+let leCode:Hero = new Hero("leCode", 50, 200);
+let i = 1;
+
+while (samir.isAlive()&& leCode.isAlive()) {
+    console.log("round",i);
+    samir.attack(leCode);
+    leCode.attack(samir);
+    i++   
+    
+}
 
 
 
+    // if()
 
+    // if(samir.isAlive(){
+    //     console.log(`${samir}`.getname());
+        
+    // }
+
+    
