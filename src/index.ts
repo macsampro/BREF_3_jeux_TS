@@ -1,7 +1,11 @@
-class Hero {
+import {weapon} from"./index"
+
+
+export class Hero {
     private name:string;
     private power:number;
     private life:number;
+            weapon!: Weapon;
 
     constructor(_name:string, _power:number, _life:number) {
         this.name = _name;
@@ -10,7 +14,7 @@ class Hero {
     }
 
     attack(opponent:Hero){
-        opponent._life -= this._power;
+        opponent._life -= this.power;
     }
 
     isAlive(){
@@ -40,15 +44,4 @@ class Hero {
     set _life(nouvelleLife : number) {
         this.life = nouvelleLife;
     }
-}
-
-
-class Weapon extends Hero {
-    weapon: Weapon;
-
-    constructor(_weapon:Weapon, _power:number, _life:number,_name:string) {
-        super( _name,_power,_life)
-        this.weapon = _weapon;
-    }
-
 }
