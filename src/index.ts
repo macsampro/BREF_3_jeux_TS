@@ -12,6 +12,7 @@ export class Hero {
         this.life = _life;
     }
 
+    // les metodes de la class Hero
     attack(opponent:Hero):void{
         opponent.life -= this.power;
     }
@@ -19,6 +20,9 @@ export class Hero {
     isAlive(){
         return this.life > 0;
     }
+
+
+    //acces au parametre de la class privet:
 
     getname(): string {
         return this.name;
@@ -45,9 +49,13 @@ export class Hero {
     }
 }
 
+
+//les joueurs
 let samir:Hero = new Hero("samir", 125, 300);
 let leCode:Hero = new Hero("leCode", 50, 200);
 let i = 1;
+
+
 
 while (samir.isAlive()&& leCode.isAlive()) {
     console.log("round",i);
@@ -56,14 +64,5 @@ while (samir.isAlive()&& leCode.isAlive()) {
     i++   
     
 }
-
-
-
-    // if()
-
-    // if(samir.isAlive(){
-    //     console.log(`${samir}`.getname());
-        
-    // }
 
     
